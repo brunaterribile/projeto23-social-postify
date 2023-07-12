@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { PublicationsService } from './publications.service';
-import { Publication } from './entity/Publication';
+import { CreatePublicationDTO } from './dto/create-publication.dto';
 
 @Controller('publications')
 export class PublicationsController {
@@ -12,7 +12,7 @@ export class PublicationsController {
   }
 
   @Post()
-  createPublication(@Body() body: Publication): void {
+  createPublication(@Body() body: CreatePublicationDTO): void {
     this.publicationsService.createPublication(body);
   }
 }

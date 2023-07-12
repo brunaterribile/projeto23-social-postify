@@ -1,11 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { Publication } from './entity/Publication';
+import { CreatePublicationDTO } from './dto/create-publication.dto';
 
 @Injectable()
 export class PublicationsService {
   posts: Publication[] = [];
 
-  createPublication(body: Publication): void {
+  createPublication(body: CreatePublicationDTO): void {
     const post = new Publication(
       body.image,
       body.title,
