@@ -4,7 +4,13 @@ export class CreatePublicationDTO {
   @IsString()
   @IsNotEmpty()
   image: string;
+
+  @IsString()
+  @IsNotEmpty()
   title: string;
+
+  @IsString()
+  @IsNotEmpty()
   text: string;
 
   @IsDate()
